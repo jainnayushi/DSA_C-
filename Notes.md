@@ -376,6 +376,7 @@ int arr[100]; // Better Practice
 * `start+(end-start)/2` - Chalaki in place of (start+end)/2
 
 ### Total Occurence = (Last Index- First Index) + 1
+
 ># Pair
 ```cpp
 pair<int,int> p;

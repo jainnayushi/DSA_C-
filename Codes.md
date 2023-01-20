@@ -1,5 +1,5 @@
 1. ch - 'a' to 'z' - lower, 'A' to 'Z' - upper, '0' to '9' - numeric
-
+2. 
 ```cpp
 char ch;
 cin >> ch;
@@ -11,7 +11,6 @@ else if(ch>='A' && ch<='Z'){
 } else if (ch>='0' && ch<='9'){
   cout<<"numeric"<<endl;
 }
-
 2a /// numeric
 e4 /// lower
 ```

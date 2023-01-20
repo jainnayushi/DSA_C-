@@ -8,6 +8,7 @@ void printArr(int arr[], int size) {
     cout << arr[i] << " ";
   }
   cout << endl;
+    
 }
 
 int peakMountain(int arr[], int size) {
