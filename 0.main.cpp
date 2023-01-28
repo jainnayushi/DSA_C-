@@ -3,33 +3,49 @@
 #include <vector>
 
 using namespace std;
+
 void printArr(int arr[], int size) {
   for (int i = 0; i < size; i++) {
     cout << arr[i] << " ";
   }
   cout << endl;
-    
 }
 
-int peakMountain(int arr[], int size) {
-  int start=0;
-    int end=size-1;
-    int mid;
-    while(start<end){ // 1. not start<=end
-        mid=start+(end-start)/2;
-        if(arr[mid]<arr[mid+1]){ //left line
-            start=mid+1;
-        }else{ // peak or right side
-            end=mid; // 2. if this mid is peak =>mid-1 karke peak miss ho jaata
+  void merge(int nums1[], int m, int nums2[], int n) {
+        int i=m-1,j=n-1;
+        int ind=m+n-1;
+        while(i>=0 && j>=0)
+        {
+            if(nums1[i]>nums2[j])
+            {
+                nums1[ind]=nums1[i];
+                i--;
+            }
+            else
+            {
+                nums1[ind]=nums2[j];
+                j--;
+            }
+            ind--;
+        }
+        while(i>=0)
+        {
+            nums1[ind]=nums1[i];
+            i--;
+            ind--;
+        }
+        while(j>=0)
+        {
+            nums1[ind]=nums2[j];
+            j--;
+            ind--;
         }
     }
-    return start; //3. return start
-}
 int main() {
-  int arr[7] = {3, 4, 5,8, 9,2,0};
-  int x = peakMountain(arr, 7);
-  printArr(arr, 7);
-  cout  <<x<<" index"<<endl;
-  cout  <<arr[x]<<" is the peak"<<endl;
+  int arr1[6] = {1,2,3,0,0,0};
+  int arr2[3] = {2,5,6};
+  int arr3[8] = {0};
+  merge(arr1, 6, arr2, 3);
+  printArr(arr1, 9);
   return 0;
 }
